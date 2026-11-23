@@ -1,0 +1,931 @@
+@font-face {
+  font-family: Reckless;
+  src: url(./assets/fonts/reckless-font-family/RecklessCondensedM-TRIAL-Regular.otf);
+}
+
+@font-face {
+  font-family: Figtree;
+  src: url(./assets/fonts/Figtree/Figtree-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Midnight;
+  src: url(./assets/fonts/midnight-sans-serif-font/);
+}
+@font-face {
+  font-family: Roboto-mono;
+  src: url(./assets/fonts/Roboto_Mono/static/RobotoMono-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+main {
+  width: 100%;
+  min-height: 100vh; /* min height is used for giving minimum height to element*/
+  background-color: #fbf9eb;
+}
+
+nav {
+  width: 100%;
+  height: 8vh;
+  background-color: #fffefb;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  position: fixed;
+  top: 1%;
+  z-index: 1;
+}
+nav i {
+  font-size: 2rem;
+  width: 33%;
+}
+nav .nav-part-1 {
+  display: flex;
+  gap: 1.5rem;
+  width: 33%;
+  display: none;
+}
+.nav-part-1 h3 {
+  font-family: Reckless;
+  font-size: 0.5rem;
+  font-weight: 100;
+}
+
+nav .nav-part-2 {
+  height: auto;
+  display: flex;
+}
+
+.nav-part-2 img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.nav-part-3{
+  display: flex;
+  padding-right: 2%;
+}
+
+.nav-part-3 a{
+  display: none;
+  font-family: Figtree;
+  font-weight: 300;
+  color: black;
+  position: relative;
+}
+
+.nav-part-3 a:after{
+    content: "";
+    width: 0;
+    height: 1.5px;
+    background-color: black;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.nav-part-3 a:hover::after{
+    width: 100%;
+}
+
+.nav-part-3 svg {
+  width: 30px;
+  height: 30px;
+}
+
+#section-1 {
+  width: 100%;
+  height: 90vh;
+  background-image: url(https://www.twoleavestea.com/cdn/shop/files/AlpineBerry_mobile.webp?v=1774284087&width=720);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding: 3rem 0.5rem;
+  gap: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+#section-1 h1 {
+  font-size: clamp(2.5rem, 3vw, 5rem);
+  font-family: Reckless;
+  color: white;
+  font-weight: 500;
+}
+
+#section-1 p {
+  font-size: clamp(1.2rem, 1vw, 1rem);
+  font-family: Figtree;
+  font-weight: 400;
+  color: white;
+}
+
+.main_btn{
+  padding: 1.2rem;
+  border: none;
+  background-color: #2a2857;
+  color: white;
+  font-family: Figtree;
+  border-radius: 1.2rem;
+  font-size: 1.1rem;
+  border: 1px solid #2A2857;
+  transition: ease 0.5s;
+}
+.main_btn:hover{
+  color:#2A2857;
+  background-color: white;
+}
+
+#section-2 {
+  width: 100%;
+  min-height: 100vh;
+  padding: 8rem 1rem;
+}
+
+#section-2 .section2-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Reckless;
+  text-align: center;
+  gap: 5vh;
+}
+
+.section2-text h1 {
+  font-size: clamp(1rem, 5vw, 3rem);
+  font-weight: 300;
+  width: 80%;
+}
+
+.btn-1 {
+  padding: 0.1rem 0.5rem;
+  font-size: 2.5rem;
+  font-family: Midnight;
+  font-weight: 600;
+  color: #201C1A;
+  background-color: var(--btn-color);
+  border-radius: 1rem;
+  text-transform: uppercase;
+  rotate: -3deg;
+  letter-spacing: -3px;
+}
+
+#section-2 .card-container {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  overflow-x: auto;
+}
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.card-top {
+  width: 90%;
+  height: 50vh;
+  background-color: var(--card-color);
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  border-radius: 1rem;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+.card-top-text {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.card-top-text button {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid #000;
+  background-color: #fff;
+  font-family: Midnight;
+  font-size: 1m;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 400;
+}
+.card-top-text span {
+  font-family: Reckless;
+}
+.card-top img {
+  height: 90%;
+  width: 90%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  transition: all ease 0.3s;
+}
+
+.card-btm-text {
+  background-color: #fff;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  font-family: Reckless;
+  font-size: 1.2rem;
+}
+
+.card-top:hover img {
+  scale: 1.1;
+}
+
+.card-btm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-family: Reckless;
+  align-items: start;
+}
+
+.card-btm h1 {
+  font-family: Reckless;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.card-btm h3 {
+  font-family: Figtree;
+  font-size: 1rem;
+  font-weight: 100;
+}
+.card-btm p {
+  font-family: Figtree;
+  font-size: 0.8rem;
+  font-weight: 100;
+  opacity: 0.5;
+  width: 90%;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btm-btn {
+  padding: 1.2rem;
+  border: none;
+  background-color: #2a2857;
+  color: white;
+  font-family: Figtree;
+  border-radius: 1.2rem;
+  font-size: 1.1rem;
+}
+
+#section3 {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 10%;
+}
+.btn-2 {
+  padding: 0.2rem 1rem;
+  font-size: 2rem;
+  font-family: Midnight;
+  font-weight: 600;
+  background-color: var(--btn2-color);;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  rotate: -3deg;
+  letter-spacing: -2px;
+  position: static;
+  margin-bottom: 2rem;
+}
+.section3-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+
+  align-items: flex-start; /* center ki jagah */
+  text-align: left; /* center ki jagah */
+}
+.section-heading {
+  font-family: Reckless;
+  font-size: 3rem;
+  font-weight: 100;
+  width: fit-content;
+  white-space: nowrap;
+}
+#section3 input {
+  width: 50%;
+  max-width: 500px;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 15px;
+  align-self: flex-start;
+}
+#section3 .tags {
+  max-width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.tags button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background: #dfe8f7;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#section4{
+    height: 150vh;
+  background-image: url(./assets/image/asset\ 24.jpeg);
+  position: relative;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+}
+.white{
+  font-size: 1.2rem;
+  background-color: white;
+  color: #2A2857;
+  border: 1px solid #2A2857;
+  border-radius: 50px;
+  padding: 1.5% 5%;
+}
+.white:hover{
+  color: white;
+  background-color: #2A2857;
+}
+#section4 .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+}
+#section4 h1{
+    font-family: Figtree;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 7rem;
+    color: white;
+    letter-spacing: -10px;
+    max-width: 60vw;
+}
+#section4 h2{
+    font-family: Midnight;
+    text-align: center;
+    font-weight: 200;
+    font-size: 2.5rem;
+    color: white;
+    max-width: 90vw;
+}
+#section4 .GIF-2{
+    color: white;
+    font-family: Figtree;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    gap: 5%;
+}
+#section4 .GIF-2 img{
+    height: 130px;
+}
+
+#section5{
+  width: 100%;
+  min-height: 100vh;
+  padding: 3%;
+}
+#section5content{
+  padding: 5rem 10%;
+}
+#section5 #card-container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#section5 .outer{
+    width: 20%;
+    height: 60vh;
+    background-color: var(--outer-color);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1%;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+#section5 .quote{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#section5 .outer p{
+      font-family: Reckless;
+      font-weight: 100;
+      opacity: 0.8;
+      font-size: 1.5rem;
+      text-align: center;
+}
+#section5 .outer a{
+  padding-top: 3%;
+  opacity: 0.5;
+}
+#section5 .inner{
+  height: 15vh;
+    background-color: var(--inner-color);
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+#section5 .inner img{
+  max-height: 10vh;
+}
+#section5 .inner .left-box{
+  border-right: 1px solid black;
+}
+#section5 .inner .right-box{
+  height: 100%;
+  width: 100%;
+  padding: 0 3% 0 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#section5 .inner .right-box p{
+  font-family: Midnight;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.smaller{
+  height: 50px;
+  width: 80px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+.smaller:hover{
+  font-size: 0.8rem;
+}
+#section-6{
+  height: 90vh;
+  background-color: #2A2857;
+  display: flex;
+}
+#section-6 .left img{
+  height: 100%;
+  width: 100%;
+  
+}
+#section-6 .right{
+  color: white;
+  padding-left: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5%;
+}
+#section-6 .right h1{
+  font: 5rem Reckless;
+  max-width: 70%;
+}
+#section-6 .right p{
+  font-size: 2rem;
+  max-width: 60%;
+}
+#section7{
+  height: 120vh;
+  background-color: #9F6429;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  position: relative;
+}
+.smallImage{
+  height: 20vh;
+  position: absolute;
+  top: -3%;
+  right: 2%;
+}
+#section7 .top{
+  align-self: center;
+}
+#section7 .top h1{
+  font-family: Reckless;
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+#section7 .top p{
+  text-align: center;
+  font-size: 1.3rem;
+}
+.subsection{
+  height: 60vh;
+  background-color: #FFCB96;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  gap: 3%;
+  justify-content: space-around;
+  position: relative;
+}
+.subsection img{
+  height: 50vh;
+  position: absolute;
+  top: -10%;
+}
+.subsection .content{
+  padding: 3% 0 0 40%;
+
+}
+.subsection h1{
+  font-family: Reckless;
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 0.8;
+}
+.subsection p{
+  font-family: Reckless;
+  font-size: 1.4rem;
+  max-width: 50%;
+  padding: 2% 0 2% 0;
+}
+
+#section8{
+  min-height: 120vh;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;justify-content: space-between;
+}
+#section8content{
+  padding: 5rem 10%;
+}
+#section8 .card2-container{
+  height: 50vh;
+  display: flex;
+  flex-shrink: 0;
+  gap: 2%;
+}
+
+#section8 .product{
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+#section8 .card2 span{
+  padding: 2% 3%;
+  background-color: #fbf9eb;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: Reckless;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  display: inline-block;
+  z-index: 10;
+  transition: transform 0.5s ease; 
+}
+
+#section8 .product img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all ease 0.3s;
+  display: block;
+  cursor: pointer;
+}
+#section8 .product:hover img{
+  scale: 1.1;
+}
+#section8 .product:hover span {
+            transform: rotate(-5deg); /* Change degrees as needed */
+        }
+#section8 .card2{
+  height: 100%;
+  width: 30%;
+  flex: 0 0 20%;
+  background-color:#2A2857;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+   overflow: hidden;
+}
+#section8 .card2 p{
+  font-family: Roboto-mono;
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+  font-weight: 100;
+  min-height: 15%;
+  width: 100%;
+  background-color: #C0DBFF;
+  padding: 4% 0% 4% 4%;
+}
+#section8 .card2-container {
+  
+  display: flex;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+#section8 .card2-container::-webkit-scrollbar {
+  display: none;
+}
+#section9{
+  height: 100vh;
+  width: 100%;
+  padding: 3%;
+  background-image: url(./assets/image/asset\ 48.png);
+    background-size: 130%;
+    background-position: 40% center;
+    background-repeat: no-repeat;
+}
+#section9 div{
+  background-color: #F26412;
+  height: 100%;
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 3% 0 0 3% ;
+}
+#section9 div h1{
+  color: white;
+  font-family: Reckless;
+  font-size: 4rem;
+  font-weight: 200;
+  max-width: 70%;
+}
+#section9 div p{
+  color: white;
+  font-family: Reckless;
+  font-size: 2rem;
+  font-weight: 200;
+  max-width: 90%;
+  padding-top: 60%;
+}
+.Ibtn{
+  color: black;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding:4% 20%;
+}
+.Ibtn:hover{
+  background-color:#2a2857;
+}
+#section10{
+  height: 140vh;
+  background-color: #C0DBFF;
+}
+#section10 #top{
+  height: 40vh;
+  display: flex;
+  padding: 5%;
+}
+#section10 #left{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  padding-left: 8%;
+}
+#section10 #left h1{
+  font-family: Reckless;
+  font-size: 3rem;
+}
+#section10 #left p{
+  font-family: Figtree;
+  font-size: 1.5rem;
+  max-width: 80%;
+}
+#section10 #left input{
+  height: 9vh;
+  width: 70%;
+  padding: 2%;
+  font-family: Roboto-mono;
+  font-size: 1.4rem;
+  border-radius: 10px;
+}
+#section10 #left button{
+  padding: 4% 7%;
+  border-radius: 50px;
+}
+#section10 #socials{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 3%;
+}
+#section10 #socials .icon{
+  padding: 1%;
+  height: 7vh;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+#section10 #socials .icon:hover{
+  background-color: white;
+}
+#section10 #socials img{
+  height: 5vh;
+}
+#section10 #btm{
+  height: 100vh;
+  padding: 4%;
+}
+#section10 #btm div{
+  padding: 3% 0 3% 5%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color:#2A2857;
+  overflow: hidden;
+  display: flex;
+  gap: 6%;
+  flex-wrap: wrap;
+}
+#section10 #btm div h3{ 
+  font-family: Reckless;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+#section10 #btm div li{
+    color: rgb(136, 134, 134);
+    text-decoration: none;
+    position: relative;
+    font-family: Figtree;
+  font-size: 1.2rem;
+  list-style: none;
+  line-height: 1.3;
+  text-transform: capitalize;
+   width: fit-content;
+  transition: color 0.3s;
+}
+
+#section10 #btm div li:hover{
+  color: white;
+  text-decoration-color: white;
+}
+#section10 #btm div li:after{
+    content: "";
+    width: 0;
+    height: 1.5px;
+    background-color: white;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+#section10 #btm div li:hover::after{
+    width: 100%;
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60%;
+  height: 60vh;
+  background-color: #C0DBFF;
+  background-image: url(./assets/image/footer.png);
+    background-size: 200%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+footer p{
+  font-family: Roboto-mono;
+  opacity: 0.4;
+  font-size: 1rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  nav {
+    width: 100%;
+    background-color: #fffefb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Reckless;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    position: fixed;
+  }
+  nav .nav-part-1 {
+    display: flex;
+    gap: 1rem;
+    width: 30%;
+  }
+  nav i {
+    display: none;
+  }
+
+  .nav-part-1 h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  nav .nav-part-2 {
+    width: 5%;
+
+    display: flex;
+  }
+  .nav-part-3 {
+    display: flex;
+    width: 40%;
+    gap: 1rem;
+    justify-content: end;
+    align-items: end;
+  }
+  .nav-part-3 a {
+    font-weight: 300;
+    display: block;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  #section-1 {
+    width: 100%;
+    text-align: start;
+    padding: 3rem 2rem;
+    background-image: url(https://www.twoleavestea.com/cdn/shop/files/AlpineBerry.webp?v=1774284236&width=2250.0);
+    background-size: cover;
+  }
+
+  #section-1 h1 {
+    width: 20%;
+  }
+  #section-1 p {
+    width: 20%;
+  }
+
+  .main_btn{
+    width: fit-content;
+    padding: 1rem 4rem;
+    border-radius: 1.2rem;
+  }
+
+  .section2-text h1 {
+    width: 50%;
+  }
+  .section3-text h1 {
+    width: 50%;
+  }
+  .card-container {
+    margin-top: 4rem;
+  }
+}
